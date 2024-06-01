@@ -25,6 +25,7 @@
         <form>
             Purchase price: <input ng-model="sale.price" ng-change="salesTax()">
             Sales Tax: {{sale.tax | currency}}
+            Total: {{sale.totalproce | currency}}
         </form>
         
         <!-------------------------------Scripts------------------------------------>
@@ -41,7 +42,8 @@
                     $scope.name = 'User';
                     $scope.sale = {price: 0};
                     $scope.salesTax = function() {
-                        $scope.sale.tax = $scope.sale.price * 1.06;
+                        $scope.sale.tax = $scope.sale.price * 0.06;
+                        $scope.sale.totalprice = $scope.sale.price + $scope.sale.tax;
                     }
                 });
         </script>
