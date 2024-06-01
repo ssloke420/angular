@@ -9,14 +9,19 @@
                 border: dotted purple 5px;
                 padding: 5px;
                 margin: 5px;
+                width: auto;
+                text-align: center;
             }
         </style>
     </head>
     <body ng-controller="AppController">
-        <h2>Page loaded at {{datetime}}</h2>
-        <div ng-repeat='char in chars' id="characters">
-            <span>{{char.name}} has a ton of {{char.item}}</span>
+        <h2>{{name}}'s page loaded at {{datetime}}</h2>
+        <div id="characters">
+            <div ng-repeat='char in chars'>
+                <span>{{char.name}} has a ton of {{char.item}}</span>
+            </div>
         </div>
+        <input placeholder="Enter your name" ng-model="name"/>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script>
             // Define the AngularJS module and the controller
@@ -27,6 +32,7 @@
                                  {name: 'Vinnie', item: 'Cruise Missiles'},
                                  {name: 'Joshua', item: 'Games'}];
                     $scope.chars = chars;
+                    $scope.name = 'undefined';
                 });
         </script>
     </body>
