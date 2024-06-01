@@ -22,17 +22,27 @@
             </div>
         </div>
         <input placeholder="Enter your name" ng-model="name"/>
+        <form>
+            Purchase price: <input ng-model="sale.price" ng-change="salesTax()">
+            Sales Tax: {{sale.tax}}
+        </form>
+        
+        <!-------------------------------Scripts------------------------------------>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script>
             // Define the AngularJS module and the controller
             angular.module('angular', [])
                 .controller('AppController', function($scope) {
-                    $scope.datetime = new Date().toLocaleString();
+                    $scope.datetime = new Date().toLocaleTimeString();
                     let chars = [{name: 'Charles', item: "Cheese"}, 
                                  {name: 'Vinnie', item: 'Cruise Missiles'},
                                  {name: 'Joshua', item: 'Games'}];
                     $scope.chars = chars;
                     $scope.name = 'User';
+                    $scope.sale = {price: 0};
+                    $scope.salesTax = function() {
+                        $scope.sale.tax = $scope.sale.price * 1.06;
+                    }
                 });
         </script>
     </body>
