@@ -2,10 +2,19 @@
 <html ng-app="angular">
     <head>
         <title>Angular</title>
+        <style>
+            #characters {
+                color: blue;
+                font-family: monospace;
+                border: dotted purple 5px;
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
     </head>
     <body ng-controller="AppController">
         <h2>Page loaded at {{datetime}}</h2>
-        <div ng-repeat='char in chars'>
+        <div ng-repeat='char in chars' id="characters">
             <span>{{char.name}} has a ton of {{char.item}}</span>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
