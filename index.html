@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="angular">
+    <head>
+        <title>Angular</title>
+    </head>
+    <body ng-controller="AppController">
+        <h2>Page loaded at {{datetime}}</h2>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+            // Define the AngularJS module and the controller
+            angular.module('angular', [])
+                .controller('AppController', function($scope) {
+                    $scope.datetime = new Date().toLocaleString();
+                });
+        </script>
+    </body>
+</html>
