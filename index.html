@@ -24,7 +24,7 @@
         <input placeholder="Enter your name" ng-model="name"/>
         <form>
             Purchase price: <input ng-model="sale.price" ng-change="salesTax()">
-            Sales Tax: {{sale.tax}}
+            Sales Tax: {{sale.tax | currency}}
         </form>
         
         <!-------------------------------Scripts------------------------------------>
