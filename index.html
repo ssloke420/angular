@@ -43,7 +43,7 @@
                     $scope.sale = {price: 0};
                     $scope.salesTax = function() {
                         $scope.sale.tax = $scope.sale.price * 0.06;
-                        $scope.sale.totalprice = $scope.sale.price + $scope.sale.tax;
+                        $scope.sale.totalprice = $scope.sale.price *1.06;
                     }
                 });
         </script>
