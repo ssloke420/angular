@@ -5,12 +5,19 @@
     </head>
     <body ng-controller="AppController">
         <h2>Page loaded at {{datetime}}</h2>
+        <div ng-repeat='char in chars'>
+            <span>{{char.name}} has a ton of {{char.item}}</span>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script>
             // Define the AngularJS module and the controller
             angular.module('angular', [])
                 .controller('AppController', function($scope) {
                     $scope.datetime = new Date().toLocaleString();
+                    let chars = [{name: 'Charles', item: "Cheese"}, 
+                                 {name: 'Vinnie', item: 'Cruise Missiles'},
+                                 {name: 'Joshua', item: 'Games'}];
+                    $scope.chars = chars;
                 });
         </script>
     </body>
